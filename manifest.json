@@ -1,7 +1,23 @@
 {
-    "manifest_version": 2,
-    "name": "palastineImages",
+    "manifest_version": 3,
+    "name": "Palestine Images",
     "version": "1.0.0",
+    "description": "Change the background color of chrome search page",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "Content.js"
+    },
+    "chrome_url_overrides": {
+        "newtab": "NewTab.html"
+    },
+    "icons": {
+        "16": "icon1.jpg",
+        "48": "icon2.jpg"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -11,5 +27,17 @@
                 "Content.js"
             ]
         }
+    ],
+    "action": {
+        "default_popup": "Popup.html",
+        "default_title": "Free Palestine, and remember Palestine in your Eid. Eid Mubarak !",
+        "default_icon": {
+            "16": "icon1.jpg",
+            "48": "icon2.jpg"
+        }
+    },
+    "options_page": "Options.html",
+    "permissions": [
+        "storage"
     ]
 }
